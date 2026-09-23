@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ApiError, pollJob, submitJob } from "@/lib/speech-client";
 import { MAX_TEXT_LENGTH, type Speech } from "@/lib/speech";
+import { WRITE_UP_URL } from "@/lib/config";
 
 import { AudioPlayer } from "@/components/audio-player";
 import { DemoModal } from "@/components/demo-modal";
@@ -20,7 +21,7 @@ const SAMPLE_TEXT = "Hi, I am Rumik, a text-to-speech model built for India. I t
 type PendingJob = { id: string; kind: "warmup" | "synthesize"; started: number };
 
 export default function Home() {
-  const [introOpen, setIntroOpen] = useState(true);
+  const [introOpen, setIntroOpen] = useState(false);
   const [text, setText] = useState(SAMPLE_TEXT);
   const [working, setWorking] = useState<"warmup" | "synthesize" | null>(null);
   const [status, setStatus] = useState("");
@@ -87,9 +88,11 @@ export default function Home() {
     <>
     <main className="page" inert={introOpen}>
       <header className="intro">
+        <a className="write-up-link" href={WRITE_UP_URL}><span aria-hidden="true">←</span> Read the write-up</a>
         <h1>Fast text<br className="mobile-break" /> to <span>speech.</span></h1>
         <p className="tagline">Rumik OSS 1 text-to-speech inference on an NVIDIA H100.</p>
         <p className="stack-summary">INT8 weight-only decode, fused Triton kernels, and GPU-controlled CUDA graphs.</p>
+        <p className="stack-summary">The first request can take a few minutes while the GPU starts.</p>
         <button type="button" className="demo-info" onClick={() => setIntroOpen(true)}>About this demo</button>
       </header>
 

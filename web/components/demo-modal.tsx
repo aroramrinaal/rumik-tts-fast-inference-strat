@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef } from "react";
+import { WRITE_UP_URL } from "@/lib/config";
 
 type DemoModalProps = { onDismiss: () => void };
 
@@ -64,7 +65,7 @@ export function DemoModal({ onDismiss }: DemoModalProps) {
           </div>
         </div>
         <div className="demo-modal-actions">
-          <a href="https://aroramrinaal.com/ai/rumik-tts-fast-inference" target="_blank" rel="noopener noreferrer">Read write-up</a>
+          <a href={WRITE_UP_URL}>Read write-up</a>
           <button type="button" onClick={onDismiss}>Open demo</button>
         </div>
       </section>

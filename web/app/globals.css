@@ -1,3 +1,10 @@
+/* Both Workers opt in; unsupported browsers use ordinary document navigation. */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .16s; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
+
 @font-face {
   font-family: "DIN Next";
   src: url("/rumik-tts-fast-inference/fonts/DINNextLTPro-Regular.ttf") format("truetype");
@@ -40,6 +47,8 @@ a { color: inherit; text-underline-offset: 4px; }
 .page { width: min(100%, 860px); margin: 0 auto; padding: clamp(48px, 8vh, 96px) clamp(20px, 5vw, 40px) 32px; }
 .page > *, .page div, .page section { min-width: 0; }
 .intro { margin-bottom: 44px; }
+.write-up-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-bottom: 20px; color: var(--muted); font-size: 14px; text-decoration: none; }
+.write-up-link:hover { color: var(--foreground); text-decoration: underline; }
 h1 { margin: 0; font: 700 clamp(38px, 6.8vw, 60px)/1.06 var(--font-serif); letter-spacing: -.035em; text-wrap: balance; }
 h1 span { color: var(--amber-text); }
 .mobile-break { display: none; }
