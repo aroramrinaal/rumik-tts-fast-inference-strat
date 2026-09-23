@@ -56,8 +56,8 @@ dt { color: var(--muted); font: 10px/1.5 var(--font-mono); letter-spacing: .06em
 dd { margin: 5px 0 0; font-size: 15px; line-height: 1.4; overflow-wrap: anywhere; }
 .actions { display: flex; align-items: stretch; gap: 12px; margin-top: 24px; }
 button { min-height: 48px; padding: 12px 22px; border: 1px solid var(--line-strong); border-radius: 2px; line-height: 1.3; transition: background .15s ease, border-color .15s ease; }
-.primary { display: inline-flex; align-items: center; justify-content: center; gap: 32px; background: var(--amber); border-color: var(--amber); color: #fff; font-weight: 700; }
-.primary span { font-size: 21px; font-weight: 400; }
+.primary { position: relative; display: inline-flex; align-items: center; justify-content: center; padding-inline: 40px; background: var(--amber); border-color: var(--amber); color: #fff; font-weight: 700; }
+.primary-arrow { position: absolute; right: 15px; top: 50%; width: 16px; height: 16px; pointer-events: none; opacity: 0; transform: translate(-3px, calc(-50% + 3px)); transition: opacity .15s ease, transform .15s ease; }
 .secondary { background: transparent; color: var(--foreground); }
 button:disabled { cursor: not-allowed; opacity: .45; }
 form[aria-busy="true"] button:disabled { cursor: wait; }
@@ -92,6 +92,7 @@ footer a { display: inline-flex; align-items: center; gap: 7px; min-height: 44px
 footer a span { color: var(--foreground); }
 @media (hover: hover) {
   .primary:hover:not(:disabled) { background: #974607; border-color: #974607; }
+  .primary:hover:not(:disabled) .primary-arrow { opacity: 1; transform: translate(0, -50%); }
   .secondary:hover:not(:disabled) { background: var(--surface); border-color: var(--muted); }
   .download:hover, footer a:hover span { text-decoration: underline; text-underline-offset: 4px; }
 }
@@ -112,8 +113,6 @@ footer a span { color: var(--foreground); }
   textarea { height: 220px; padding: 17px; font-size: 17px; }
   .actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; margin-top: 20px; }
   .actions button { width: 100%; min-height: 52px; }
-  .primary { position: relative; padding-inline: 40px; }
-  .primary span { position: absolute; right: 18px; }
   .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
   footer { margin-top: 30px; }
 }
