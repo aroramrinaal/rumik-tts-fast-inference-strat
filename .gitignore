@@ -1,0 +1,22 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.env*
+!.env.example
+.dev.vars*
+!.dev.vars.example
+node_modules/
+.next/
+.open-next/
+.wrangler/
+*.tsbuildinfo
+*.wav
+
+# Model weights and local-only licensed font assets
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+web/public/fonts/*.ttf
+web/public/fonts/*.otf

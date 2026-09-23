@@ -1,0 +1,4 @@
+MODAL_ENDPOINT=https://YOUR-WORKSPACE--rumik-tts-fast-inference-api.modal.run
+MODAL_PROXY_TOKEN_ID=wk-REPLACE_ME
+MODAL_PROXY_TOKEN_SECRET=ws-REPLACE_ME
+NEXTJS_ENV=development

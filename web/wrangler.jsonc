@@ -1,0 +1,44 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "rumik-tts-fast-inference",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-09-22",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
+  "workers_dev": true,
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "rumik-tts-fast-inference"
+    }
+  ],
+  "ratelimits": [
+    {
+      "name": "TTS_RATE_LIMITER",
+      "namespace_id": "2026092201",
+      "simple": {
+        "limit": 4,
+        "period": 60
+      }
+    }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "routes": [
+    {
+      "pattern": "aroramrinaal.com/rumik-tts-fast-inference",
+      "zone_name": "aroramrinaal.com"
+    },
+    {
+      "pattern": "aroramrinaal.com/rumik-tts-fast-inference/*",
+      "zone_name": "aroramrinaal.com"
+    }
+  ]
+}
