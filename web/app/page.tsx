@@ -89,6 +89,7 @@ export default function Home() {
       <header className="intro">
         <h1>Fast text<br className="mobile-break" /> to <span>speech.</span></h1>
         <p className="tagline">Rumik OSS 1 text-to-speech inference on an NVIDIA H100.</p>
+        <p className="stack-summary">INT8 weight-only decode, fused Triton kernels, and GPU-controlled CUDA graphs.</p>
         <button type="button" className="demo-info" onClick={() => setIntroOpen(true)}>About this demo</button>
       </header>
 

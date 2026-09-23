@@ -44,6 +44,7 @@ h1 { margin: 0; font: 700 clamp(38px, 6.8vw, 60px)/1.06 var(--font-serif); lette
 h1 span { color: var(--amber-text); }
 .mobile-break { display: none; }
 .tagline { margin: 20px 0 0; color: var(--muted); font: clamp(16px, 2.2vw, 18px)/1.55 var(--font-sans); }
+.stack-summary { margin: 8px 0 0; color: var(--muted); font: 14px/1.55 var(--font-sans); }
 .input-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
 .input-heading label { font-size: 17px; }
 .count { flex: none; color: var(--muted); font: 11px/1.5 var(--font-mono); font-variant-numeric: tabular-nums; }
